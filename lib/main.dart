@@ -9,12 +9,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'StateFull Class',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Opacity Filtter'),
     );
   }
 }
@@ -53,6 +53,16 @@ class _MyHomePageState extends State<MyHomePage> {
             Opacity(
               opacity: _counter,
               child: Image.asset("assets/images/ojos-de-gato-1.jpg"),
+            ),
+            Slider(
+              value: _counter,
+              min: 0.0,
+              max: 1.0,
+              onChanged: (double value) {
+                setState(() {
+                  _counter = value;
+                });
+              },
             ),
           ],
         ),
